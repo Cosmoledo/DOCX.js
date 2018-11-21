@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>docxJS</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+
+	<script type="text/javascript" src="./docx.js"></script>
+</head>
+<body>
+	<script>
+		function test() {
+			const doc = new DOCXjs();
+			doc.text("DOCX.js is a free open source library for generating Microsoft Word Documents using pure client-side JavaScript.");
+			doc.text("It was developed by James Hall at Snapshot Media.");
+			doc.output();
+		}
+	</script>
+	<button onclick="test()">Run Test</button>
+</body>
+</html>
