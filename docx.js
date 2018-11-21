@@ -46,7 +46,7 @@ const DOCXjs = function() {
 		return output.compact();
 	};
 
-	const generate = function() {
+	const generate = function(filename) {
 		// Content types
 		const files = [
 			"[Content_Types].xml",
@@ -78,7 +78,7 @@ const DOCXjs = function() {
 					},
 					type: "blob"
 				})
-				.then(content => saveAs(content, "hello.docx"));
+				.then(content => saveAs(content, filename + ".docx"));
 		};
 
 		const zip = new JSZip();
@@ -87,7 +87,7 @@ const DOCXjs = function() {
 		let loadedFiles = 0;
 
 		files.forEach(file => {
-			fetch("./blank/" + file)
+			fetch("./files/" + file)
 				.then(raw => raw.text())
 				.then(text => {
 					zip.file(file, text.compact());
@@ -100,8 +100,8 @@ const DOCXjs = function() {
 	};
 
 	return {
-		output() {
-			generate();
+		output(filename) {
+			generate(filename);
 		},
 		text(str) {
 			textElements.push(str);

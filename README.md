@@ -1,18 +1,16 @@
-Please use https://github.com/stephen-hardy/DOCX.js instead. 
+## Usage:
 
-DOCX.js is a document generator for Microsoft Word documents in Pure client-side JavaScript.
+```javascript
+const doc = new DOCXjs();
+doc.text("This is a test");
+doc.text("It was created with DOCXjs.");
+doc.output("filename");
+```
 
-This is just a prototype. For consulting contact james@snapshotmedia.co.uk
+## What's new?
 
-I also made jsPDF back in 2009 - http://github.com/MrRio/jsPDF
-
-Usage:
-
-var doc = new DOCXjs();
-doc.text('DOCX.js is a free open source library for generating Microsoft Word Documents using pure client-side JavaScript.');
-doc.text('It was developed by James Hall at Snapshot Media.');
-doc.output('datauri');
-
-Output:
-
-Nice shiny Microsoft Office Word Document.
+- jszip updated to newest version and it gets loaded over CDN
+- FileSaver will be used to download the file
+- Filename can be defined in the output-function
+- Updated DOCX-file to DIN-A4
+- DOCX-file will be compressed to smallest file size
